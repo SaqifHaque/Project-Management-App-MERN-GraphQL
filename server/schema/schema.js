@@ -2,6 +2,9 @@ const { projects, clients } = require('../sampleData.js');
 
 const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLList } = require('graphql');
 
+const Project = require('../models/Project');
+const Client = require('../models/Client');
+
 const ClientType = new GraphQLObjectType({
     name: 'Client',
     fields: () => ({
