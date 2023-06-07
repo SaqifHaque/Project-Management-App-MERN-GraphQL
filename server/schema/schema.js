@@ -121,13 +121,14 @@ const mutation = new GraphQLObjectType({
             }
         },
         resolve(parent,args) {
-            const client = new Client({
+            const project = new Project({
                 name: args.name,
-                email: args.email,
-                phone: args.phone
+                description: args.description,
+                status: args.status,
+                clientId: args.clientId
             });
 
-            return client.save();
+            return project.save();
         },
     }
 })
