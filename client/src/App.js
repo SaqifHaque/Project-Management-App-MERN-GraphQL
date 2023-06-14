@@ -1,11 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: 'http://localhost5000/graphql',
+  cache: new InMemoryCache(),
+})
+
 
 function App() {
   return (
-    <div className="container">
+    <>
+      <ApolloProvider client={client}>
+        <div className="container">
 
-    </div>
+        </div>
+      </ApolloProvider>
+    </>
   );
 }
 
