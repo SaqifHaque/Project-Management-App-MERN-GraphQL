@@ -6,7 +6,7 @@ import { GET_CLIENTS } from '../queries/clientQueries';
 const ClientRow = ({client}) => {
   const [deleteClient] = useMutation(DELETE_CLIENT, {
     variables: { id: client.id },
-    refetchQueries: {{ query: GET_CLIENTS }},
+    refetchQueries: [{ query: GET_CLIENTS }]
   });
   return (
     <tr>
