@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from '@apollo/client';
 import Spinner from './Spinner';
 import ProjectCard from './ProjectCard';
+import { GET_CLIENTS } from '../queries/clientQueries';
 
 const Projects = () => {
     const { loading, error, data } = useQuery(GET_CLIENTS);
